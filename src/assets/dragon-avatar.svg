@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="36" y1="24" x2="222" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#152B48"/>
+      <stop offset="1" stop-color="#080F1B"/>
+    </linearGradient>
+    <linearGradient id="scale" x1="70" y1="48" x2="190" y2="213" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9CF3E6"/>
+      <stop offset=".52" stop-color="#3BAEAD"/>
+      <stop offset="1" stop-color="#21627D"/>
+    </linearGradient>
+    <linearGradient id="horn" x1="83" y1="44" x2="112" y2="103" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1BD"/>
+      <stop offset="1" stop-color="#D19A65"/>
+    </linearGradient>
+    <filter id="glow" x="18" y="18" width="220" height="220" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <circle cx="128" cy="128" r="128" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="83" fill="#42D9D0" opacity=".2" filter="url(#glow)"/>
+  <path d="M75 94 59 42c27 9 45 24 56 44M181 94l16-52c-27 9-45 24-56 44" fill="url(#horn)" stroke="#FFE7B0" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M128 54c-39 0-68 30-68 71 0 22 10 39 23 52l-9 31 38-12c5 2 10 3 16 3s11-1 16-3l38 12-9-31c13-13 23-30 23-52 0-41-29-71-68-71Z" fill="url(#scale)" stroke="#C3FFF1" stroke-width="5"/>
+  <path d="M68 113c15-15 34-19 54-10-15 18-34 25-54 21M188 113c-15-15-34-19-54-10 15 18 34 25 54 21" fill="#102437"/>
+  <path d="m104 109 15 4-10 9-14-2 9-11ZM152 109l-15 4 10 9 14-2-9-11Z" fill="#E8FF9E"/>
+  <circle cx="108" cy="115" r="3" fill="#102437"/>
+  <circle cx="148" cy="115" r="3" fill="#102437"/>
+  <path d="M128 126c-8 14-20 20-34 22 10 13 21 19 34 19s24-6 34-19c-14-2-26-8-34-22Z" fill="#17364A" stroke="#A6F5DF" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M105 151h46M113 162l-7 13M143 162l7 13" stroke="#68D3C3" stroke-linecap="round" stroke-width="4"/>
+  <path d="m80 174-17 9M176 174l17 9M91 188l-11 13M165 188l11 13" stroke="#D1FFF0" stroke-linecap="round" stroke-width="3" opacity=".75"/>
+</svg>

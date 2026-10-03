@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import dragonAvatar from './assets/dragon-avatar.svg'
 import './App.css'
 
 const linkItems = [
@@ -9,11 +11,11 @@ const linkItems = [
     href: '#'
   },
   {
-    title: 'GitHub / Xrafsdreamscom',
-    subtitle: 'Open-source code, starter templates & micro-ideas',
-    icon: '◌',
+    title: 'GitHub / ibrahimadeyinka620-web',
+    subtitle: 'Explore my projects and open-source work',
+    icon: 'GH',
     tone: 'blue',
-    href: '#'
+    href: 'https://github.com/ibrahimadeyinka620-web'
   },
   {
     title: 'Twitter / @Xrafsdreamscom',
@@ -46,8 +48,10 @@ const socialLinks = [
 ]
 
 function App() {
+  const [isLight, setIsLight] = useState(false)
+
   return (
-    <main className="page-shell">
+    <main className={`page-shell${isLight ? ' theme-light' : ''}`}>
       <div className="hub-card">
         <header className="topbar">
           <div className="brand" aria-label="Links home">
@@ -56,8 +60,14 @@ function App() {
           </div>
 
           <div className="top-actions" aria-label="Quick actions">
-            <button type="button" className="icon-button" aria-label="Theme switch">
-              ☾
+            <button
+              type="button"
+              className="icon-button"
+              aria-label={`Switch to ${isLight ? 'dark' : 'light'} theme`}
+              aria-pressed={isLight}
+              onClick={() => setIsLight(!isLight)}
+            >
+              {isLight ? '☾' : '☼'}
             </button>
             <button type="button" className="icon-button" aria-label="Share profile">
               ↗
@@ -71,8 +81,8 @@ function App() {
         <section className="profile-panel" aria-labelledby="profile-name">
           <div className="avatar-shell">
             <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80"
-              alt="Profile portrait"
+              src={dragonAvatar}
+              alt="Illustrated dragon avatar"
             />
             <span className="avatar-plus" aria-label="Online status">＋</span>
           </div>

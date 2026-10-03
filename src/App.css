@@ -1,21 +1,59 @@
 .page-shell {
+  --page-glow: rgba(100, 149, 255, 0.18);
+  --page-top: #0a0f16;
+  --page-bottom: #050b10;
+  --card-bg: linear-gradient(180deg, rgba(13, 18, 24, 0.98), rgba(12, 14, 21, 0.94));
+  --card-border: rgba(142, 167, 190, 0.12);
+  --card-shadow: 0 28px 70px rgba(0, 0, 0, 0.58);
+  --text-primary: #edf5ff;
+  --text-secondary: #c9d7eb;
+  --text-muted: #8c9aae;
+  --surface: rgba(119, 139, 168, 0.08);
+  --surface-hover: rgba(136, 158, 190, 0.11);
+  --surface-border: rgba(128, 145, 171, 0.14);
+  --chip-bg: rgba(105, 126, 155, 0.12);
+  --chip-border: rgba(119, 143, 179, 0.16);
+  --divider: rgba(146, 165, 193, 0.14);
+  --small-control-bg: rgba(255, 255, 255, 0.02);
+  --focus-glow: rgba(130, 170, 255, 0.26);
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 28px 16px;
   background:
-    radial-gradient(circle at 50% 10%, rgba(100, 149, 255, 0.18), transparent 23%),
-    linear-gradient(180deg, #0a0f16 0%, #050b10 100%);
-  color: #edf5ff;
+    radial-gradient(circle at 50% 10%, var(--page-glow), transparent 23%),
+    linear-gradient(180deg, var(--page-top) 0%, var(--page-bottom) 100%);
+  color: var(--text-primary);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.page-shell.theme-light {
+  --page-glow: rgba(73, 146, 220, 0.16);
+  --page-top: #f5f8ff;
+  --page-bottom: #e8eef8;
+  --card-bg: linear-gradient(180deg, #ffffff, #f6f8fc);
+  --card-border: rgba(93, 115, 148, 0.2);
+  --card-shadow: 0 28px 70px rgba(40, 61, 91, 0.16);
+  --text-primary: #182334;
+  --text-secondary: #384b63;
+  --text-muted: #66768c;
+  --surface: rgba(88, 112, 145, 0.07);
+  --surface-hover: rgba(88, 112, 145, 0.12);
+  --surface-border: rgba(83, 104, 136, 0.16);
+  --chip-bg: rgba(92, 121, 164, 0.08);
+  --chip-border: rgba(83, 104, 136, 0.15);
+  --divider: rgba(83, 104, 136, 0.18);
+  --small-control-bg: rgba(45, 67, 100, 0.04);
+  --focus-glow: rgba(71, 129, 207, 0.3);
 }
 
 .hub-card {
   width: min(100%, 392px);
   border-radius: 32px;
   padding: 18px 18px 14px;
-  background: linear-gradient(180deg, rgba(13, 18, 24, 0.98), rgba(12, 14, 21, 0.94));
-  border: 1px solid rgba(142, 167, 190, 0.12);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.58);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
 }
 
 .topbar {
@@ -31,7 +69,7 @@
   gap: 8px;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #f8fbff;
+  color: var(--text-primary);
 }
 
 .brand-icon {
@@ -56,8 +94,8 @@
   height: 26px;
   border: 1px solid rgba(152, 166, 196, 0.16);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.02);
-  color: #dbe7ff;
+  background: var(--small-control-bg);
+  color: var(--text-primary);
   font-size: 0.78rem;
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease;
@@ -65,13 +103,13 @@
 
 .icon-button:hover {
   transform: translateY(-1px);
-  border-color: rgba(131, 168, 255, 0.35);
+  border-color: var(--focus-glow);
 }
 
 .profile-pill {
   width: 32px;
   height: 32px;
-  background: rgba(66, 74, 93, 0.7);
+  background: var(--surface-hover);
 }
 
 .profile-panel {
@@ -97,7 +135,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(18, 28, 38, 0.8);
+  border: 3px solid var(--page-bottom);
 }
 
 .avatar-plus {
@@ -108,7 +146,7 @@
   place-items: center;
   width: 22px;
   height: 22px;
-  border: 3px solid #0c1119;
+  border: 3px solid var(--page-bottom);
   border-radius: 50%;
   background: linear-gradient(135deg, #6ce1ff, #65d96d);
   color: #06141b;
@@ -118,7 +156,7 @@
 
 .profile-panel h1 {
   margin: 0;
-  color: #f8fbff;
+  color: var(--text-primary);
   font-size: clamp(2.1rem, 6vw, 2.75rem);
   line-height: 1.1;
   letter-spacing: -0.06em;
@@ -127,13 +165,13 @@
 .handle {
   margin: 8px 0 10px;
   font-size: 0.72rem;
-  color: #8c9aae;
+  color: var(--text-muted);
 }
 
 .bio {
   max-width: 292px;
   margin: 0;
-  color: #c9d7eb;
+  color: var(--text-secondary);
   font-size: 0.8rem;
   line-height: 1.6;
 }
@@ -157,9 +195,9 @@
   min-height: 26px;
   padding: 0 10px;
   border-radius: 999px;
-  background: rgba(105, 126, 155, 0.12);
-  border: 1px solid rgba(119, 143, 179, 0.16);
-  color: #d9e7ff;
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  color: var(--text-secondary);
   font-size: 0.64rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -179,8 +217,8 @@
   min-height: 62px;
   padding: 10px 12px 10px 11px;
   border-radius: 16px;
-  background: rgba(119, 139, 168, 0.08);
-  border: 1px solid rgba(128, 145, 171, 0.14);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
@@ -188,8 +226,8 @@
 
 .link-item:hover {
   transform: translateY(-1px);
-  border-color: rgba(130, 170, 255, 0.26);
-  background: rgba(136, 158, 190, 0.11);
+  border-color: var(--focus-glow);
+  background: var(--surface-hover);
 }
 
 .link-icon {
@@ -237,7 +275,7 @@
 
 .link-title {
   overflow: hidden;
-  color: #edf5ff;
+  color: var(--text-primary);
   font-size: 0.87rem;
   font-weight: 700;
   text-overflow: ellipsis;
@@ -246,7 +284,7 @@
 
 .link-subtitle {
   overflow: hidden;
-  color: #8fa2bb;
+  color: var(--text-muted);
   font-size: 0.66rem;
   line-height: 1.35;
   text-overflow: ellipsis;
@@ -267,11 +305,11 @@
   gap: 16px;
   margin-top: 16px;
   padding-top: 14px;
-  border-top: 1px solid rgba(146, 165, 193, 0.14);
+  border-top: 1px solid var(--divider);
 }
 
 .connect-bar > span {
-  color: #dfe9ff;
+  color: var(--text-secondary);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -290,9 +328,9 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid rgba(151, 167, 194, 0.14);
-  background: rgba(255, 255, 255, 0.02);
-  color: #dfeaff;
+  border: 1px solid var(--surface-border);
+  background: var(--small-control-bg);
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.8rem;
   transition: transform 0.2s ease, border-color 0.2s ease;
@@ -300,7 +338,7 @@
 
 .social-link:hover {
   transform: translateY(-1px);
-  border-color: rgba(144, 194, 255, 0.35);
+  border-color: var(--focus-glow);
 }
 
 @media (max-width: 420px) {
